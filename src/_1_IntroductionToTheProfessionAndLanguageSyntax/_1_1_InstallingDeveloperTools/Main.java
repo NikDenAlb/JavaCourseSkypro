@@ -1,4 +1,4 @@
-package _1_1_InstallingDeveloperTools;
+package _1_IntroductionToTheProfessionAndLanguageSyntax._1_1_InstallingDeveloperTools;
 
 public class Main {
     public static void main(String[] args) {
