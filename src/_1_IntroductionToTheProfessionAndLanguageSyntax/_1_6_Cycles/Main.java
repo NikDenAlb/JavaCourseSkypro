@@ -85,7 +85,7 @@ public class Main {
             }
         }
 
-        for (; v <= 2096; v = v + 4) {
+        for (; v <= 2096; v += 4) {
             if (v % 400 == 0 || v % 100 != 0) {
                 System.out.println(v + " год является високосным");
             }
