@@ -133,8 +133,8 @@ public class Main {
         while (((LocalDate.of(taskMonth.getYear(), taskMonth.getMonth(), ++firstFridayNumber)).getDayOfWeek()).getValue() != 5)
             ;
 
-        for (int i = 1; i <= 31; i++) {
-            if (i % 7 == firstFridayNumber % 7) {
+        for (int i = firstFridayNumber; i <= 31; i += 7) {
+            if (i % 7 == firstFridayNumber) {
                 System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет");
             }
         }
