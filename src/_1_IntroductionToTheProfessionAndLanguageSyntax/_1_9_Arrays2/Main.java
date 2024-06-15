@@ -1,4 +1,4 @@
-package _1_IntroductionToTheProfessionAndLanguageSyntax._1_9_Arrays;
+package _1_IntroductionToTheProfessionAndLanguageSyntax._1_9_Arrays2;
 
 import java.util.Arrays;
 
