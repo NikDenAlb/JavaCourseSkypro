@@ -15,8 +15,10 @@ public class Main {
         String lastName = "Ivanov";
 
         String fullName = lastName + ' ' + firstName + ' ' + middleName;
+        String fullName2 = String.join(" ", firstName, middleName, lastName);
 
         System.out.println("ФИО сотрудника — " + fullName);
+        System.out.println("Alternative way — " + fullName2);
     }
 
     public static void task2() {
