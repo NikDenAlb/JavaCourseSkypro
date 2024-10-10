@@ -62,7 +62,7 @@ public class Main {
         if (deliveryDays(deliveryDistance) == -1) {
             System.out.println("Доставки нет");
         } else {
-            System.out.println("Cрок доставки " + deliveryDays(deliveryDistance) + " день/дня/дней");
+            System.out.println("Срок доставки " + deliveryDays(deliveryDistance) + " день/дня/дней");
         }
     }
 

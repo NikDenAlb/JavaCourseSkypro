@@ -16,7 +16,7 @@ public class NotBookNotAuthor {
         book2.printBook();
 
         book1.setPublicYear(1989);
-        System.out.println("\nДата публиции book1 изменена\n");
+        System.out.println("\nДата публикации book1 изменена\n");
         book1.printBook();
     }
 }

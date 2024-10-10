@@ -100,7 +100,7 @@ public class Main {
         var WeightDifferenceBA = bBoxerWeight % aBoxerWeight;
         System.out.println("Остаток от деления веса боксёра a на вес боксёра b: " + WeightDifferenceBA + " кг");
 
-        //С операцией % в курсе знакомят неудачно. Как в лекциях, так и на примере этой задачи.
+        //С операцией "%" в курсе знакомят неудачно. Как в лекциях, так и на примере этой задачи.
     }
 
     public static void task8() {
@@ -116,6 +116,6 @@ public class Main {
         var imagineTotalWorkTime = imagineNumberEmployees * workingHours;
         System.out.println("Если в компании работает " + imagineNumberEmployees + " человек, то всего " + imagineTotalWorkTime + " часов работы может быть поделено между сотрудниками");
 
-        //Задача сделана из желания продемонстрировать более серьёзные вычисления. На данном этапе вообще не стоит так делать.
+        //Задача сделана из желания продемонстрировать более серьёзные вычисления. Думаю так делать не стоит хотя бы из-за округлений.
     }
 }
