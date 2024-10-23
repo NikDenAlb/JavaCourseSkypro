@@ -3,56 +3,77 @@ package _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L2;
 import java.util.Arrays;
 
 import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L2.Department.DEP1;
+import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L2.Department.DEP2;
 import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L2.Department.DEP3;
 import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L2.Department.DEP4;
+import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L2.Department.DEP5;
 
 public class Main {
     private static Employee[] staffBook = new Employee[10];
 
     public static void main(String[] args) {
 
-        System.out.println("\n1-3,6,7.Создать класс Employee");
         staffBook[0] = new Employee("ФИО0", DEP1, 14_000_00);
-        System.out.println(staffBook[0]);
-
-        System.out.println("\n4.Геттеры");
-        System.out.println("staffBook[0].getFullName() = " + staffBook[0].getFullName());
-        System.out.println("staffBook[0].getDepartment() = " + staffBook[0].getDepartment());
-        System.out.println("staffBook[0].getSalary() = " + staffBook[0].getSalary());
-        System.out.println("staffBook[0].getId() = " + staffBook[0].getId());
-        System.out.println("staffBook[0].getCounter() = " + staffBook[0].getCounter());
-
-        System.out.println("\n5. Сеттеры");
-        staffBook[0].setDepartment(DEP1);
-        staffBook[0].setSalary(1500000);
-        System.out.println(staffBook[0]);
-
-        System.out.println("\n8a. Получить список всех сотрудников со всеми имеющимися по ним данными ");
-        staffBook[1] = new Employee("ФИО1", DEP1, 14_000_00);
+        staffBook[1] = new Employee("ФИО1", DEP1, 16_000_00);
         staffBook[2] = new Employee("ФИО2", DEP1, 14_000_00);
         staffBook[3] = new Employee("ФИО3", DEP3, 15_000_00);
         staffBook[4] = new Employee("ФИО4", DEP3, 16_000_00);
         staffBook[5] = new Employee("ФИО5", DEP4, 14_500_00);
+
+        System.out.println("\n1. Проиндексировать зарплату (вызвать изменение зарплат у всех сотрудников на величину аргумента в %).");
+        System.out.println(EmployeeService.toString(staffBook));
+        System.out.println("Индексируем");
+        EmployeeService.increaseSalary(staffBook, 11.11111);
         System.out.println(EmployeeService.toString(staffBook));
 
-        System.out.println("\n8b. Посчитать сумму затрат на зарплаты в месяц.");
+        System.out.println("\n2а. Получить в качестве параметра номер отдела и найти сотрудника с минимальной зарплатой.");
         System.out.println(EmployeeService.toString(staffBook));
-        System.out.println("EmployeeService.totalSalary(staffBook) = " + EmployeeService.totalSalary(staffBook));
+        System.out.println("Arrays.toString(EmployeeService.minimumDepartmentSalary(staffBook, DEP1)) = " + Arrays.toString(EmployeeService.minimumDepartmentSalary(staffBook, DEP1)));
+        System.out.println("Arrays.toString(EmployeeService.minimumDepartmentSalary(staffBook, DEP2)) = " + Arrays.toString(EmployeeService.minimumDepartmentSalary(staffBook, DEP2)));
 
-        System.out.println("\n8c. Найти сотрудника с минимальной зарплатой.");
+        System.out.println("\n2b. Получить в качестве параметра номер отдела и найти сотрудника с максимальной зарплатой.");
         System.out.println(EmployeeService.toString(staffBook));
-        System.out.println("Arrays.toString(EmployeeService.minimumSalary(staffBook)) = " + Arrays.toString(EmployeeService.minimumSalary(staffBook)) + "    *(это массив id)");
+        System.out.println("Arrays.toString(EmployeeService.maximumDepartmentSalary(staffBook, DEP1)) = " + Arrays.toString(EmployeeService.maximumDepartmentSalary(staffBook, DEP1)));
 
-        System.out.println("\n8d. Найти сотрудника с максимальной зарплатой.");
+        System.out.println("\n2c. Получить в качестве параметра номер отдела и найти сумму затрат на зарплату по отделу.");
         System.out.println(EmployeeService.toString(staffBook));
-        System.out.println("Arrays.toString(EmployeeService.maximumSalary(staffBook)) = " + Arrays.toString(EmployeeService.maximumSalary(staffBook)));
+        System.out.println("EmployeeService.totalDepartmentSalary(staffBook, DEP3) = " + EmployeeService.totalDepartmentSalary(staffBook, DEP3));
+        System.out.println("EmployeeService.totalDepartmentSalary(staffBook, DEP5) = " + EmployeeService.totalDepartmentSalary(staffBook, DEP5));
 
-        System.out.println("\n8e. Подсчитать среднее значение зарплат.");
+        System.out.println("\n2d. Получить в качестве параметра номер отдела и найти среднюю зарплату по отделу.");
         System.out.println(EmployeeService.toString(staffBook));
-        System.out.println("EmployeeService.averageSalary(staffBook) = " + EmployeeService.averageSalary(staffBook));
+        System.out.println("EmployeeService.averageDepartmentSalary(staffBook, DEP3) = " + EmployeeService.averageDepartmentSalary(staffBook, DEP3));
+        System.out.println("EmployeeService.averageDepartmentSalary(staffBook, DEP5) = " + EmployeeService.averageDepartmentSalary(staffBook, DEP5));
 
-        System.out.println("\n8f. Получить Ф.И.О. всех сотрудников (вывести в консоль).");
+        System.out.println("\n2e. Получить в качестве параметра номер отдела и проиндексировать зарплату всех сотрудников отдела на процент.");
         System.out.println(EmployeeService.toString(staffBook));
-        EmployeeService.printAllFullNames(staffBook);
+        System.out.println("индексируем DEP3");
+        EmployeeService.increaseDepartmentSalary(staffBook, DEP3, 33.2211);
+        System.out.println(EmployeeService.toString(staffBook));
+
+        System.out.println("\n2f. Получить в качестве параметра номер отдела и напечатать всех сотрудников отдела (все данные, кроме отдела).");
+        System.out.println(EmployeeService.toString(staffBook));
+        System.out.println("Печатаем отдел 3");
+        EmployeeService.printDepartment(staffBook, DEP3);
+        System.out.println("Печатаем отдел 5");
+        EmployeeService.printDepartment(staffBook, DEP5);
+
+        System.out.println("\n3a. Получить в качестве параметра число и найти всех сотрудников с зарплатой меньше числа (вывести id, Ф.И.О. и зарплатой в консоль).");
+        System.out.println(EmployeeService.toString(staffBook));
+        int parametr = 18_000_00;
+        System.out.println("parametr = " + parametr);
+        EmployeeService.printAllLessSalary(staffBook, parametr);
+        parametr = 10_000_00;
+        System.out.println("parametr = " + parametr);
+        EmployeeService.printAllLessSalary(staffBook, parametr);
+
+        System.out.println("\n3b. Получить в качестве параметра число и найти всех сотрудников с зарплатой больше (или равно) числа (вывести id, Ф. И. О. и зарплатой в консоль).");
+        System.out.println(EmployeeService.toString(staffBook));
+        parametr = 25_000_00;
+        System.out.println("parametr = " + parametr);
+        EmployeeService.printAllMoreSalary(staffBook, parametr);
+        parametr = 16_000_00;
+        System.out.println("parametr = " + parametr);
+        EmployeeService.printAllMoreSalary(staffBook, parametr);
     }
 }
