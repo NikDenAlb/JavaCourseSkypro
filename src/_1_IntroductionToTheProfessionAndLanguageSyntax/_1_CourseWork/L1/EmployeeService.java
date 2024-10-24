@@ -48,22 +48,22 @@ public class EmployeeService {
         return out;
     }
 
-    public static int[] maximumSalary(Employee[] stafbook) {
+    public static int[] maximumSalary(Employee[] staffBook) {
         int maximumSalary = 0;
         int counter = 0;
-        for (Employee employee : stafbook) {
+        for (Employee employee : staffBook) {
             if (employee != null && maximumSalary < employee.getSalary()) {
                 maximumSalary = employee.getSalary();
             }
         }
-        for (Employee employee : stafbook) {
+        for (Employee employee : staffBook) {
             if (employee != null && maximumSalary == employee.getSalary()) {
                 counter++;
             }
         }
         int[] out = new int[counter];
         int i = 0;
-        for (Employee employee : stafbook) {
+        for (Employee employee : staffBook) {
             if (employee != null && maximumSalary == employee.getSalary()) {
                 out[i++] = employee.getId();
             }
@@ -71,20 +71,20 @@ public class EmployeeService {
         return out;
     }
 
-    public static double averageSalary(Employee[] stafbook) {
+    public static double averageSalary(Employee[] staffBook) {
         int count = 0;
-        for (Employee employee : stafbook) {
+        for (Employee employee : staffBook) {
             if (employee != null) {
                 count++;
             }
         }
         if (count == 0) return 0;
-        return (double) totalSalary(stafbook) / count;
+        return (double) totalSalary(staffBook) / count;
     }
 
-    public static void printAllFullNames(Employee[] staffbook) {
+    public static void printAllFullNames(Employee[] staffBook) {
         int i = 0;
-        for (Employee employee : staffbook) {
+        for (Employee employee : staffBook) {
             if (employee != null) {
                 System.out.println(++i + ") " + employee.getFullName());
             }
