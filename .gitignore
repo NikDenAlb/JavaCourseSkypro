@@ -30,3 +30,4 @@ bin/
 
 ### MyAdditions ###
 .idea
+/src/_2_JavaCore/_2_4_MavenAndSpringBoot/target/
