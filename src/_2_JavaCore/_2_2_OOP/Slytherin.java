@@ -27,6 +27,7 @@ public class Slytherin extends Hogwarts {
         resourcefulness = random.nextInt(100);
         leadership = random.nextInt(100);
     }
+
     @Override
     public void printStudent() {
         System.out.println(getFullName() + " [spellPower=" + getSpellPower() + ", apparitionDistance=" + getApparitionDistance() + ']' +
@@ -35,9 +36,9 @@ public class Slytherin extends Hogwarts {
 
     public void challengeSlytherin(Slytherin slytherin) {
         if (cunning + determination + ambition + resourcefulness + leadership > slytherin.cunning + slytherin.determination + slytherin.ambition + slytherin.resourcefulness + slytherin.leadership) {
-            System.out.println(getFullName()+" лучший Слизеринец, чем "+slytherin.getFullName());
+            System.out.println(getFullName() + " лучший Слизеринец, чем " + slytherin.getFullName());
         } else if (cunning + determination + ambition + resourcefulness + leadership < slytherin.cunning + slytherin.determination + slytherin.ambition + slytherin.resourcefulness + slytherin.leadership) {
-            System.out.println(slytherin.getFullName()+" лучший Слизеринец, чем "+getFullName());
-        } else System.out.println(getFullName()+" такой же хороший Слизеринец как и "+slytherin.getFullName());
+            System.out.println(slytherin.getFullName() + " лучший Слизеринец, чем " + getFullName());
+        } else System.out.println(getFullName() + " такой же хороший Слизеринец как и " + slytherin.getFullName());
     }
 }

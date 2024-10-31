@@ -2,7 +2,6 @@ package _2_JavaCore._2_2_OOP;
 
 public class Main {
     public static void main(String[] args) {
-
         Gryffindor harryPotter = new Gryffindor("Гарри Поттер");
         Gryffindor hermioneGranger = new Gryffindor("Гермиона Грейнджер");
         Gryffindor ronaldWeasley = new Gryffindor("Рон Уизли");

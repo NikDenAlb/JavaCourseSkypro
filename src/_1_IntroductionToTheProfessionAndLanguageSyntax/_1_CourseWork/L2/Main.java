@@ -12,7 +12,6 @@ public class Main {
     private static Employee[] staffBook = new Employee[10];
 
     public static void main(String[] args) {
-
         staffBook[0] = new Employee("ФИО0", DEP1, 14_000_00);
         staffBook[1] = new Employee("ФИО1", DEP1, 16_000_00);
         staffBook[2] = new Employee("ФИО2", DEP1, 14_000_00);

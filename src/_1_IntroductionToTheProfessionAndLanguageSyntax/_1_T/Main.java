@@ -8,7 +8,6 @@ import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_T.Ticket5.task5
 import static _1_IntroductionToTheProfessionAndLanguageSyntax._1_T.Ticket6.task6;
 
 public class Main {
-
     public static void main(String[] args) {
         System.out.println("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
         task1();
@@ -18,6 +17,4 @@ public class Main {
         task5();
         task6();
     }
-
-
 }

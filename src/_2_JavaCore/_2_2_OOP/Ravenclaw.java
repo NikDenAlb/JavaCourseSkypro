@@ -33,9 +33,9 @@ public class Ravenclaw extends Hogwarts {
 
     public void challengeRavenclawr(Ravenclaw ravenclaw) {
         if (intelligence + knowledge + creativity + wit > ravenclaw.intelligence + ravenclaw.knowledge + ravenclaw.creativity + ravenclaw.wit) {
-            System.out.println(getFullName()+" лучший Когтевранец, чем "+ravenclaw.getFullName());
+            System.out.println(getFullName() + " лучший Когтевранец, чем " + ravenclaw.getFullName());
         } else if (intelligence + knowledge + creativity + wit < ravenclaw.intelligence + ravenclaw.knowledge + ravenclaw.creativity + ravenclaw.wit) {
-            System.out.println(ravenclaw.getFullName()+" лучший Когтевранец, чем "+getFullName());
-        } else System.out.println(getFullName()+" такой же хороший Когтевранец как и "+ravenclaw.getFullName());
+            System.out.println(ravenclaw.getFullName() + " лучший Когтевранец, чем " + getFullName());
+        } else System.out.println(getFullName() + " такой же хороший Когтевранец как и " + ravenclaw.getFullName());
     }
 }

@@ -10,7 +10,6 @@ public class Main {
     private static Employee[] staffBook = new Employee[10];
 
     public static void main(String[] args) {
-
         System.out.println("\n1-3,6,7.Создать класс Employee");
         staffBook[0] = new Employee("ФИО0", DEP1, 14_000_00);
         System.out.println(staffBook[0]);

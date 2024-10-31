@@ -20,7 +20,7 @@ public class CalculatorController {
         return calculatorService.hello();
     }
 
-        @GetMapping(path = "/plus")
+    @GetMapping(path = "/plus")
     public String plus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         return calculatorService.plus(num1, num2);
     }

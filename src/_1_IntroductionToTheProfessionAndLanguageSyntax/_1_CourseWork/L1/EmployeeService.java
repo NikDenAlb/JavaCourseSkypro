@@ -1,7 +1,6 @@
 package _1_IntroductionToTheProfessionAndLanguageSyntax._1_CourseWork.L1;
 
 public class EmployeeService {
-
     public static String toString(Employee[] staffBook) {
         StringBuilder string = new StringBuilder();
         for (int i = 0; i < staffBook.length; i++) {
