@@ -29,6 +29,5 @@ bin/
 .DS_Store
 
 ### MyAdditions ###
-.idea
 /src/_2_JavaCore/_2_4_MavenAndSpringBoot/target/
 /src/_2_JavaCore/_2_6_ListsAndSets/target/
