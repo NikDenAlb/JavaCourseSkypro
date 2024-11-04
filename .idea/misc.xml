@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/_2_JavaCore/_2_6_ListsAndSets/pom.xml" />
         <option value="$PROJECT_DIR$/src/_2_JavaCore/_2_4_MavenAndSpringBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/src/_2_JavaCore/_2_8_MapGenerics/pom.xml" />
       </list>
     </option>
   </component>

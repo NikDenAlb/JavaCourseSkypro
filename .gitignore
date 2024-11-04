@@ -31,3 +31,4 @@ bin/
 ### MyAdditions ###
 /src/_2_JavaCore/_2_4_MavenAndSpringBoot/target/
 /src/_2_JavaCore/_2_6_ListsAndSets/target/
+/src/_2_JavaCore/_2_8_MapGenerics/target/
