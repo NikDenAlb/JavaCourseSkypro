@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="skypro1424" />
         <module name="skypro1428" />
+        <module name="skypro1429" />
+        <module name="skypro1424" />
         <module name="skypro1426" />
       </profile>
     </annotationProcessing>
