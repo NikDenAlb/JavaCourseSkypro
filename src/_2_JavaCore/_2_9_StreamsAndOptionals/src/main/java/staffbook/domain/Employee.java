@@ -1,22 +1,24 @@
 package staffbook.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
 public class Employee {
     private final String firstName;
     private final String lastName;
+    @Setter
+    private Department department;
+    @Setter
+    private int salary;
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, Department department, int salary) {
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    public String getFirstname() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
+        this.department = department;
+        this.salary = salary;
     }
 
     public String getFullName() {
@@ -40,6 +42,8 @@ public class Employee {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", department=" + department +
+                ", salary=" + salary +
                 '}';
     }
 }
