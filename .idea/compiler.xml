@@ -11,6 +11,7 @@
         <module name="skypro1429" />
         <module name="skypro1424" />
         <module name="skypro1426" />
+        <module name="skypro14210" />
       </profile>
     </annotationProcessing>
   </component>

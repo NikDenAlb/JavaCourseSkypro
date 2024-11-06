@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>nikdenalb</groupId>
-    <artifactId>skypro1428</artifactId>
+    <artifactId>skypro14210</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>StaffBook28</name>
+    <name>StaffBook210</name>
     <url>http://maven.apache.org</url>
     <properties>
         <java.version>23</java.version>
@@ -24,8 +24,14 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
-        <finalName>skypro1428</finalName>
+        <finalName>skypro14210</finalName>
     </build>
 </project>
