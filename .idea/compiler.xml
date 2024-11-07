@@ -14,5 +14,8 @@
         <module name="skypro14210" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="skypro14211" target="23" />
+    </bytecodeTargetLevel>
   </component>
 </project>
