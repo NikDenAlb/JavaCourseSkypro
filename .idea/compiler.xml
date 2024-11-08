@@ -7,15 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="skypro14212" />
+        <module name="skypro14211" />
+        <module name="skypro14210" />
         <module name="skypro1428" />
         <module name="skypro1429" />
         <module name="skypro1424" />
         <module name="skypro1426" />
-        <module name="skypro14210" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="skypro14211" target="23" />
-    </bytecodeTargetLevel>
   </component>
 </project>
