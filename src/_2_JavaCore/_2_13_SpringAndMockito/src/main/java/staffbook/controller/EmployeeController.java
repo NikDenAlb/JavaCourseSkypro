@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import staffbook.domain.Employee;
 import staffbook.service.EmployeeService;
 
-import java.util.List;
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/employee")
@@ -19,8 +19,11 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/add")
-    public Employee add(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
-        return employeeService.add(firstName, lastName);
+    public Employee add(@RequestParam("firstName") String firstName,
+                        @RequestParam("lastName") String lastName,
+                        @RequestParam("department") int department,
+                        @RequestParam("salary") int salary) {
+        return employeeService.add(firstName, lastName, department, salary);
     }
 
     @GetMapping(path = "/remove")
@@ -30,11 +33,11 @@ public class EmployeeController {
 
     @GetMapping(path = "/find")
     public Employee find(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
-        return employeeService.getStaffBook().get(employeeService.find(firstName, lastName));
+        return employeeService.find(firstName, lastName);
     }
 
     @GetMapping(path = "/book")
-    public List<Employee> book() {
+    public Collection<Employee> book() {
         return employeeService.getStaffBook();
     }
 }
