@@ -23,7 +23,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Collection<Employee> getEmployeesByDepartment(int id) {
         Department department = checkId(id);
-        return employeeService.getStaffBook().stream()
+        return employeeService.getStaffBook().values().stream()
                 .filter(e -> e.getDepartment() == department)
                 .toList();
     }
@@ -51,7 +51,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Map<Integer, List<Employee>> getEmployeesByDepartments() {
-        return employeeService.getStaffBook().stream()
+        return employeeService.getStaffBook().values().stream()
                 .collect(Collectors.groupingBy(e->e.getDepartment().ordinal()));
     }
 

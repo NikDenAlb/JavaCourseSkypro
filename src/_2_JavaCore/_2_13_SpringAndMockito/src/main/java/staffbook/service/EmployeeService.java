@@ -2,11 +2,11 @@ package staffbook.service;
 
 import staffbook.domain.Employee;
 
-import java.util.Collection;
+import java.util.Map;
 
 public interface EmployeeService {
 
-    Collection<Employee> getStaffBook();
+    Map<String, Employee> getStaffBook();
 
     Employee add(String firstName, String lastName, int department, int salary);
 

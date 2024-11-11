@@ -38,6 +38,6 @@ public class EmployeeController {
 
     @GetMapping(path = "/book")
     public Collection<Employee> book() {
-        return employeeService.getStaffBook();
+        return employeeService.getStaffBook().values();
     }
 }

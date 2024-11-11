@@ -1,46 +1,74 @@
 package staffbook.service.impl;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import staffbook.domain.Department;
 import staffbook.domain.Employee;
+import staffbook.exception.EmployeeAlreadyAddedException;
+import staffbook.exception.EmployeeNotFoundException;
+import staffbook.exception.EmployeeStorageIsFullException;
 import staffbook.exception.ImpossibleDepartmentException;
 import staffbook.exception.InvalidInputException;
-import staffbook.repository.EmployeeBook;
 import staffbook.service.EmployeeService;
 
-import java.util.Collection;
-import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.apache.commons.lang3.StringUtils.isAlpha;
 
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
+    @Value("${PAGES}")
+    private int PAGES;
+    @Getter
+    private final Map<String, Employee> staffBook = new HashMap<>();
 
-    private final EmployeeBook employeeBook;
+    public Employee create(Employee employee) {
+        if (staffBook.containsKey(employee.getFullName())) {
+            throw new EmployeeAlreadyAddedException("Уже есть такой сотрудник");
+        }
+        if (staffBook.size() == PAGES) {
+            throw new EmployeeStorageIsFullException("Книга заполнена");
+        }
+        staffBook.put(employee.getFullName(), employee);
+        return employee;
+    }
+
+    public Employee read(String firstName, String lastName) {
+        Employee out = staffBook.get(firstName + " " + lastName);
+        if (out == null) {
+            throw new EmployeeNotFoundException("Сотрудник не найден");
+        }
+        return out;
+    }
+
+    public Employee delete(String firstName, String lastName) {
+        Employee out = staffBook.remove(firstName + " " + lastName);
+        if (out == null) {
+            throw new EmployeeNotFoundException("Такого сотрудника и не было");
+        }
+        return out;
+    }
 
     @Override
     public Employee add(String firstName, String lastName, int department, int salary) {
         validateInput(firstName, lastName);
-        return employeeBook.create(new Employee(firstName, lastName, getDepartmentByIndex(department), salary));
+        return create(new Employee(firstName, lastName, getDepartmentByIndex(department), salary));
     }
 
     @Override
     public Employee remove(String firstName, String lastName) {
         validateInput(firstName, lastName);
-        return employeeBook.delete(firstName, lastName);
+        return delete(firstName, lastName);
     }
 
     @Override
     public Employee find(String firstName, String lastName) {
         validateInput(firstName, lastName);
-        return employeeBook.read(firstName, lastName);
-    }
-
-    @Override
-    public Collection<Employee> getStaffBook() {
-        return Collections.unmodifiableCollection(employeeBook.getStaffBook().values());
+        return read(firstName, lastName);
     }
 
     private static Department getDepartmentByIndex(int index) {
@@ -51,7 +79,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return departments[index];
     }
 
-    private void validateInput (String firstName, String lastName) {
+    private void validateInput(String firstName, String lastName) {
         if (!isAlpha(firstName) || !isAlpha(lastName)) {
             throw new InvalidInputException("Ввод содержит недопустимый символ");
         }
