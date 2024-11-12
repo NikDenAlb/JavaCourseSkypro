@@ -20,6 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static staffbook.service.Constants.EMPLOYEE_LIST;
+import static staffbook.service.Constants.employee1;
 
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
@@ -34,10 +36,6 @@ class EmployeeServiceTest {
         return Stream.of(Arguments.of("Namea", "Surnamea", 0, 1000),
                 Arguments.of("Nameb", "Surnameb", 2, 2000),
                 Arguments.of("Namec", "Surnamec", 3, 3000));
-    }
-
-    @Test
-    void getStaffBook() {
     }
 
     @ParameterizedTest
@@ -92,5 +90,12 @@ class EmployeeServiceTest {
     @MethodSource("arguments")
     void removeNotHere(String firstname, String lastname) {
         assertThrows(EmployeeNotFoundException.class, () -> employeeService.remove(firstname, lastname));
+    }
+
+    @Test
+    void find() {
+        EMPLOYEE_LIST.forEach(e -> employeeService.add(e.getFirstName(), e.getLastName(), e.getDepartment().ordinal(), e.getSalary()));
+        assertEquals(employee1, employeeService.find(employee1.getFirstName(),employee1.getLastName()));
+        assertThrows(EmployeeNotFoundException.class, () -> employeeService.find("Меня", "Здесьнет"));
     }
 }
