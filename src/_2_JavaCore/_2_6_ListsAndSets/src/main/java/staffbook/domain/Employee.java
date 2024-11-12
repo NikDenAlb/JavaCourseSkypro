@@ -11,14 +11,6 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getFirstname() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
