@@ -11,7 +11,7 @@ import static staffbook.domain.Department.DEP2;
 import static staffbook.domain.Department.DEP5;
 
 public class Constants {
-    public static final int MAX_DEP_ID = Department.values().length-1;
+    public static final int MAX_DEP_ID = Department.values().length - 1;
     public static final int MIN_DEP_ID = 0;
     public static final int EMPTY_DEP_ID = 2;
     public static Employee employee1 = new Employee("Namea", "Surnamea", DEP1, 1000);
@@ -33,7 +33,9 @@ public class Constants {
             "Named" + " " + "Surnamed", new Employee("Named", "Surnamed", DEP5, 3000),
             "Namee" + " " + "Surnamee", new Employee("Namee", "Surnamee", DEP5, 4000));
     public static final Map<Integer, List<Employee>> EMPLOYEE_MAP_BY_DEP = Map.of(
-            1, List.of(employee1), 2, List.of(employee2, employee3), 5, List.of(employee4, employee5));
+            0, List.of(employee1),
+            1, List.of(employee2, employee3),
+            4, List.of(employee4, employee5));
 
     public static final List<Employee> EMPLOYEE_LIST_MAX_ID = List.of(
             new Employee("Named", "Surnamed", DEP5, 3000),
