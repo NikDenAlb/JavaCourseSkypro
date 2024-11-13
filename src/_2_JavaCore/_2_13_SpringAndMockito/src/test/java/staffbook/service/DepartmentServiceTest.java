@@ -5,7 +5,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 import staffbook.service.impl.DepartmentServiceImpl;
 import staffbook.service.impl.EmployeeServiceImpl;
 
@@ -17,7 +16,6 @@ import static staffbook.service.Constants.EMPLOYEE_MAP;
 import static staffbook.service.Constants.MAX_DEP_ID;
 import static staffbook.service.Constants.MIN_DEP_ID;
 
-@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 class DepartmentServiceTest {
     @Mock
