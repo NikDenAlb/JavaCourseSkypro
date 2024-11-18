@@ -69,6 +69,7 @@ public class IntegerListImpl implements IntegerList {
 
     @Override
     public boolean contains(Integer item) {
+        validateItem(item);
         Integer[] storageCopy = toArray();
         sort(storageCopy);
         return binarySearch(storageCopy, item);
