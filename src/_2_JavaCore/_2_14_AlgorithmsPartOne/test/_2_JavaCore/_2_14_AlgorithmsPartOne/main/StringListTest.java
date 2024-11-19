@@ -25,8 +25,8 @@ class StringListTest {
 
     static Stream<Arguments> argumentsForTests() {
         return Stream.of(Arguments.of("item111", "item222", "item555", "item333"),
-                Arguments.of("item222", "item222", "item666", "item333"),
-                Arguments.of("item333", "item333", "item777", "item333"));
+                Arguments.of("item222", "item888", "item666", "item333"),
+                Arguments.of("item333", "item456", "item777", "item333"));
     }
 
     @ParameterizedTest
