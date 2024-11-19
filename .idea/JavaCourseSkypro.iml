@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/_2_JavaCore/_2_14_AlgorithmsPartOne/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/_2_JavaCore/_2_15_AlgorithmsPartTwo/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/_2_JavaCore/_2_16_AlgorithmsPartThree/test" isTestSource="true" />
     </content>
     <orderEntry type="library" exported="" name="junit.jupiter" level="project" />
     <orderEntry type="inheritedJdk" />
