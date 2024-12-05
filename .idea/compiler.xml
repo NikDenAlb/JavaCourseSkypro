@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="skypro14213" />
         <module name="skypro14212" />
-        <module name="exam1" />
+        <module name="examinerservice" />
         <module name="skypro14211" />
         <module name="skypro14210" />
         <module name="skypro1428" />

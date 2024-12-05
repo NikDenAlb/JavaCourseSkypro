@@ -1,6 +1,6 @@
 package examinerservice.service;
 
-import examinerservice.model.Question;
+import examinerservice.domain.Question;
 
 import java.util.Collection;
 

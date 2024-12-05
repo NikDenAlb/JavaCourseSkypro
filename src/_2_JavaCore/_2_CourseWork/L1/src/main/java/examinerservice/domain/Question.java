@@ -1,4 +1,4 @@
-package examinerservice.model;
+package examinerservice.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
