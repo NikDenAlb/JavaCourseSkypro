@@ -9,14 +9,12 @@
     <url>http://maven.apache.org</url>
     <properties>
         <java.version>23</java.version>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.3.5</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
