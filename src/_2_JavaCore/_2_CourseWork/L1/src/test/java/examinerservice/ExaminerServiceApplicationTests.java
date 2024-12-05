@@ -1,10 +1,10 @@
-package exam1;
+package examinerservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Exam1ApplicationTests {
+class ExaminerServiceApplicationTests {
 
     @Test
     void contextLoads() {

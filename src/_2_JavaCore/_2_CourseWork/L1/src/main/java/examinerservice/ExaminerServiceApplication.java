@@ -1,11 +1,11 @@
-package exam1;
+package examinerservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Exam1Application {
+public class ExaminerServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Exam1Application.class, args);
+        SpringApplication.run(ExaminerServiceApplication.class, args);
     }
 }
