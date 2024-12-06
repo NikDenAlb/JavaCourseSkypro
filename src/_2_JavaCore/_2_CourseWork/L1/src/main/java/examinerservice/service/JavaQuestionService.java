@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Service
 public class JavaQuestionService implements QuestionService {
-    private final Set<Question> questionsBook = new HashSet<>();
+    public final Set<Question> questions = new HashSet<>();
 
     @Override
     public Question add(String question, String answer) {
@@ -23,7 +23,7 @@ public class JavaQuestionService implements QuestionService {
             throw new NullQuestionIsNotAllowedException("Question can't be null");
         }
         Question newQuestion = new Question(question, answer);
-        if (questionsBook.add(newQuestion)) {
+        if (questions.add(newQuestion)) {
             return newQuestion;
         } else {
             throw new QuestionAlreadyExistsException("Question already exists in the questionsBook");
@@ -35,7 +35,7 @@ public class JavaQuestionService implements QuestionService {
         if (question == null) {
             throw new NullQuestionIsNotAllowedException("Question is null");
         }
-        if (questionsBook.add(question)) {
+        if (questions.add(question)) {
             return question;
         } else {
             throw new QuestionAlreadyExistsException("Question already exists in the questionsBook");
@@ -44,7 +44,7 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question remove(Question question) {
-        if (questionsBook.remove(question)) {
+        if (questions.remove(question)) {
             return question;
         } else {
             throw new QuestionIsNotInTheBookException("Question doesn't exists in the questionsBook");
@@ -53,15 +53,14 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Collection<Question> getAll() {
-        return Collections.unmodifiableCollection(questionsBook);
+        return Collections.unmodifiableCollection(questions);
     }
 
     @Override
     public Question getRandomQuestion() {
-        if (questionsBook.isEmpty()) {
+        if (questions.isEmpty()) {
             throw new NoQuestionsException("There is no questions");
         }
-        Random a = new Random();
-        return (Question) questionsBook.toArray()[a.nextInt(questionsBook.size())];
+        return (Question) questions.toArray()[new Random().nextInt(questions.size())];
     }
 }
