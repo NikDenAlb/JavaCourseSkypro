@@ -10,6 +10,7 @@
         <module name="skypro14213" />
         <module name="skypro14212" />
         <module name="examinerservice" />
+        <module name="exam1" />
         <module name="skypro14211" />
         <module name="skypro14210" />
         <module name="skypro1428" />
@@ -18,5 +19,10 @@
         <module name="skypro1426" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="exam1" options="-parameters" />
+    </option>
   </component>
 </project>

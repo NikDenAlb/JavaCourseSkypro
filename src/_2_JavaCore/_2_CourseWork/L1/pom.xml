@@ -12,7 +12,6 @@
     <artifactId>exam1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>exam1</name>
-    <description>exam1</description>
     <properties>
         <java.version>23</java.version>
     </properties>
