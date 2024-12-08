@@ -2,9 +2,10 @@ package examinerservice;
 
 import examinerservice.domain.Question;
 
+import java.util.List;
 import java.util.Set;
 
-public class CONSTANTS {
+public class QuestionConstants {
     public static final String QUESTION_STRING_EXAMPLE = "QuestionEx";
     public static final String ANSWER_STRING_EXAMPLE = "AnswerEx";
     public static final String QUESTION_STRING_EXAMPLE2 = "QuestionEx2";
@@ -36,4 +37,9 @@ public class CONSTANTS {
             EXPECTED_QUESTION1,
             EXPECTED_QUESTION2,
             EXPECTED_QUESTION4);
+
+    public static final List<Question> EXAM_QUESTION_LIST = List.of(
+            EXPECTED_QUESTION1,
+            EXPECTED_QUESTION2,
+            EXPECTED_QUESTION3);
 }

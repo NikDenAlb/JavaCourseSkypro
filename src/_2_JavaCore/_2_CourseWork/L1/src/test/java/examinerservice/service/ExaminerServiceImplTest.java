@@ -1,12 +1,20 @@
 package examinerservice.service;
 
+import examinerservice.domain.Question;
+import examinerservice.exception.AtLeastOneQuestionException;
+import examinerservice.exception.NotEnoughQuestionsException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static examinerservice.CONSTANTS.EXPECTED_QUESTION_LIST;
+import java.util.Collection;
+import java.util.List;
+
+import static examinerservice.QuestionConstants.EXAM_QUESTION_LIST;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -14,22 +22,50 @@ import static org.mockito.Mockito.when;
 class ExaminerServiceImplTest {
 
     @Mock
-    private QuestionService javaQuestionServiceMock;
+    private QuestionService questionService;
 
     @InjectMocks
     private ExaminerServiceImpl examinerService;
 
+    private final List<Question> questions = EXAM_QUESTION_LIST;
+
     @Test
-    void getQuestions() {
-        when(javaQuestionServiceMock.getAll()).thenReturn(EXPECTED_QUESTION_LIST);
+    void testGetQuestionsReturnsSetOfQuestions() {
+        when(questionService.getAll()).thenReturn(questions);
+        when(questionService.getRandomQuestion()).thenReturn(questions.get(0), questions.get(1));
 
-        assertTrue(EXPECTED_QUESTION_LIST.containsAll(examinerService.getQuestions(EXPECTED_QUESTION_LIST.size())));
-        assertTrue(examinerService.getQuestions(EXPECTED_QUESTION_LIST.size()).containsAll(EXPECTED_QUESTION_LIST));
+        Collection<Question> result = examinerService.getQuestions(2);
 
-        assertTrue(EXPECTED_QUESTION_LIST.containsAll(examinerService.getQuestions(EXPECTED_QUESTION_LIST.size() - 1)));
+        assertEquals(2, result.size());
+        assertTrue(result.contains(questions.get(0)));
+        assertTrue(result.contains(questions.get(1)));
+    }
 
-        assertTrue(EXPECTED_QUESTION_LIST.containsAll(examinerService.getQuestions((EXPECTED_QUESTION_LIST.size() - 1) / 2)));
+    @Test
+    void testGetQuestionsThrowsNotEnoughQuestionsException() {
+        when(questionService.getAll()).thenReturn(questions);
 
-        assertTrue(EXPECTED_QUESTION_LIST.containsAll(examinerService.getQuestions(1)));
+        NotEnoughQuestionsException thrown = assertThrows(NotEnoughQuestionsException.class, () -> examinerService.getQuestions(5));
+
+        assertEquals("You asked too many questions", thrown.getMessage());
+    }
+
+    @Test
+    void testGetQuestionsThrowsAtLeastOneQuestionException() {
+        when(questionService.getAll()).thenReturn(questions);
+
+        AtLeastOneQuestionException thrown = assertThrows(AtLeastOneQuestionException.class, () -> examinerService.getQuestions(0));
+
+        assertEquals("You need to ask at least one question", thrown.getMessage());
+    }
+
+    @Test
+    void testGetQuestionsReturnsAllQuestionsWhenAmountEqualsAll() {
+        when(questionService.getAll()).thenReturn(questions);
+
+        Collection<Question> result = examinerService.getQuestions(3);
+
+        assertEquals(3, result.size());
+        assertTrue(result.containsAll(questions));
     }
 }
